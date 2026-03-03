@@ -32,3 +32,7 @@ async function apiRequest<T>(path: string, init?: RequestInit): Promise<T> {
 export async function fetchArticles(): Promise<Article[]> {
   return apiRequest<Article[]>("/articles/");
 }
+
+export async function likeArticle(articleId: string): Promise<Article> {
+  return apiRequest<Article>(`/articles/${articleId}/like`, { method: "POST" });
+}

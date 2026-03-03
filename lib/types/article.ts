@@ -1,10 +1,13 @@
 export type ArticleStatus = "draft" | "pending" | "approved" | "archived";
+export type ArticleCategory = "announcements" | "achievements" | "events" | "partnerships";
 
 export interface Article {
   id: string;
   author_id: string;
   title: string;
   body: string;
+  category: ArticleCategory;
+  like_count: number;
   image_path?: string | null;
   image_alt_text?: string | null;
   status: ArticleStatus;
